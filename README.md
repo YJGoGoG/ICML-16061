@@ -196,13 +196,13 @@ The ablation study showed a **5.4–18.1 point** performance drop when the **Rew
 #### （1） **Role of Reward Context**:
    - The Reward Context ensures that the model generates trajectories that align with the task's objectives by prioritizing high-reward actions. Without it, the model can still generate valid trajectories, but they may not be optimal in terms of task alignment and reward maximization.
 
-#### （2） **Complementary Roles of Reward Context and**:
+#### （2） **Complementary Roles of Reward Context and Value Guidance**:
    - Value Guidance helps prioritize transitions with high value, and when combined with Reward Context, it ensures that the generated trajectories maximize rewards. Reward Context alone cannot replace the value-driven focus of VG, explaining part of the performance drop when Reward Context is removed.
 
-#### 3. **Interaction with Domain Discrepancy Score**:
+#### (3) **Interaction with Domain Discrepancy Score**:
    - Domain Discrepancy Score aligns the source and target domain dynamics, ensuring that generated trajectories are realistic. However, without Reward Context, the model may fail to focus on reward-maximizing actions, even if the trajectories are dynamically aligned with the target domain.
 
-#### 4. **Interaction with Policy Harmonization**:
+#### (4) **Interaction with Policy Harmonization**:
    - Policy Harmonization ensures that the generated actions are feasible, but it does not directly impact the reward structure. Reward Context is necessary to ensure that the actions generated are also rewarding, which is crucial for improving task performance.
 
 ### Conclusion: Reward Context vs Other Components
@@ -220,7 +220,7 @@ As shown in the first row of Figure 1 in the main text, when only Reward Context
 We sincerely thank the reviewers for their detailed and constructive feedback regarding our theoretical analysis. Below, we provide a comprehensive point-by-point clarification and correction, addressing the major concerns related to Theorems 1 and 2.
 
 
-### 📌 (1) Clarification on Theorem 1: Assumptions and Context Role
+### 📌 1. Clarification on Theorem 1: Assumptions and Context Role
 
 **Concern**: Theorem 1 is a basic result from convex optimization, and the assumptions—especially strong convexity and the boundedness of context—may not hold in diffusion models.
 
@@ -238,7 +238,7 @@ We fully agree that the assumptions may not globally hold in deep conditional di
 
 ---
 
-### 📌 (2) Clarification on Theorem 2: Definitions and Algorithm Connection
+### 📌 2. Clarification on Theorem 2: Definitions and Algorithm Connection
 
 **Concern**: Several terms (e.g., $R_{\text{tar}}, R_{\text{src}}, \hat{R}_{\text{tar}}, \mathcal{H}$) are undefined, and the relationship between DDS and the algorithm is unclear.
 
