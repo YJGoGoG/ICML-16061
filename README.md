@@ -277,6 +277,10 @@ We agree that the original statement was incomplete. We now clarify:
     $$
     R_{\text{tar}} - R_{\text{src}} \leq 2B \sqrt{\frac{\log(2/\delta)}{n}} + \lambda \mathbb{E}_{\mathcal{D}_{\text{src}}}[1 - \Delta_{\text{DDS}}],
     $$
+    
+    $$R_{\text{tar}} - R_{\text{src}} \leq 2B \sqrt{\frac{\log(2/\delta)}{n}} + \lambda \mathbb{E}_{\mathcal{D}} \left[ 1 - \Delta_{\text{DDS}} \right],
+    $$
+
     which quantifies how well the generated trajectories align with the target domain’s dynamics.
 
 - **Core Insight**: This theoretical result illustrates that **DDS is not only a heuristic** but also **theoretically correlated with cross-domain generalization**. As DDS approaches 1 (perfect dynamic alignment), the domain gap shrinks.
