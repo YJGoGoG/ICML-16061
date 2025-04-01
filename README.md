@@ -156,21 +156,38 @@ We extend our baseline comparisons to include recent strong methods, including:
 - **PAR** [Lyu et al., 2024, ICLR]
 - **Vanilla Decision Diffuser (DD)** [Ajay et al., 2023]
 
-We conduct preliminary comparisons on both locomotion and Adroit domains using environments from ODRL. The evaluations are conducted under the **Offline-Online** setting: source data is offline (D4RL), while target environments are accessible for interaction. Following ODRL and the original papers, PAR augments data via optimal transport and imitation, and DD uses augmented target transitions for return-conditioned generation and IQL training.
+We conduct preliminary comparisons on both locomotion and Adroit domains using environments from ODRL. The evaluations are conducted under the **Offline-Online** setting: source data is offline (D4RL), while target environments are accessible for interaction. Following ODRL and the original papers, PAR augments data via optimal transport and imitation, and DD uses augmented target transitions for return-conditioned generation.
 
 ####  Performance Comparison (Offline-Online Setting)
 
-| Task                         | BC_VGDF         | DD              | BC_PAR          | DiffTA           |
-|------------------------------|------------------|------------------|------------------|------------------|
-| pen-shrink-finger-medium     | 1.6 ± 0.7        | 0.7 ± **0.3**        | 3.3 ± 1.4        | **5.4** ± 2.8     |
-| ant-friction-0.5            | 74.1 ± 3.4       | 45.3 ± 7.8       | 80.3 ± 4.2       | **84.6 ± 3.1**    |
+
+<div align="center">
+    <img src="ant-friction-medium-PAR.jpeg" width="40%" height ="100%" > 
+    <img src="door-shink-par.jpeg" width="40%" height ="100%" > 
+</div>
+<p align = 'center'>
+Figure 2. Comparative mean performance analysis of BC_VGDF, BC_PAR and DiffTA
+</p>
+
+<div align="center">
+    <img src="tnse-ant-friction.jpeg" width="40%" height ="100%" > 
+    <img src="tnse-hopper-friction.jpeg" width="40%" height ="100%" > 
+</div>
+<p align = 'center'>
+Figure 3. t-SNE visualization of generated trajectories and target
+domain trajectories
+</p>
+
 
 These results indicate that:
 - On **Adroit**, most methods struggle due to challenging morphology and high-dimensional control—**this aligns with observations from the ODRL benchmark**.
-- While PAR outperforms VGDF and DD in some locomotion settings (e.g., ant-friction-0.5), our **DiffTA** achieves the strongest overall results, confirming its effectiveness in aligning dynamics and generating reliable high-return data across domains.
+- While PAR outperforms VGDF in some locomotion settings, our **DiffTA achieves the strongest overall results**, confirming its effectiveness in aligning dynamics and generating reliable high-return data across domains.
+- **Decision Diffuser**, like other generative methods, **struggles to generate data that matches the target domain's dynamics**, leading to significant mismatch and performance degradation. This further emphasizes the advantage of DiffTA in generating domain-aligned trajectories.
+
+
 
 We will include full PAR and DD results across all tasks in the final version, and additionally incorporate the latest **OTDF** [ICLR 2025] for comparison and discussion.
-这里补充一下par的图，以及和DD对比的图，还有VGDF，用曲线图来表示
+
 
 ---
 
@@ -199,7 +216,7 @@ The ablation study showed a **5.4–18.1 point** performance drop when the **Rew
 #### （2） **Complementary Roles of Reward Context and Value Guidance**:
    - Value Guidance helps prioritize transitions with high value, and when combined with Reward Context, it ensures that the generated trajectories maximize rewards. Reward Context alone cannot replace the value-driven focus of VG, explaining part of the performance drop when Reward Context is removed.
 
-#### (3) **Interaction with Domain Discrepancy Score**:
+#### (3)  **Interaction with Domain Discrepancy Score**:
    - Domain Discrepancy Score aligns the source and target domain dynamics, ensuring that generated trajectories are realistic. However, without Reward Context, the model may fail to focus on reward-maximizing actions, even if the trajectories are dynamically aligned with the target domain.
 
 #### (4) **Interaction with Policy Harmonization**:
