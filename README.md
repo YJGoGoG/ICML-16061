@@ -263,18 +263,18 @@ We agree that the original statement was incomplete. We now clarify:
 
 - **Definitions**:
   - $\mathcal{H}$: Hypothesis class of return estimators, i.e., functions predicting $R(\tau)$.
-  - $R_{\text{tar}}, R_{\text{src}}$: Expected returns of the **same policy $\pi$**, trained using DiffTA-generated data, but evaluated under the **target** and **source** domain dynamics.
-  - $\hat{R}_{\text{tar}}$: Empirical estimate of $R_{\text{tar}}$ from sampled target domain data.
+  - $R_ {\text{tar}}, R_ {\text{src}}$: Expected returns of the **same policy $\pi$**, trained using DiffTA-generated data, but evaluated under the **target** and **source** domain dynamics.
+  - $\hat{R}_ {\text{tar}}$: Empirical estimate of $R_ {\text{tar}}$ from sampled target domain data.
 
-- **Sampling Assumption**: We assume transitions are sampled i.i.d. from the source and target offline datasets ($\mathcal{D}_{\text{src}}, \mathcal{D}_{\text{tar}}$), which is standard in offline RL generalization theory.
+- **Sampling Assumption**: We assume transitions are sampled i.i.d. from the source and target offline datasets ($\mathcal{D}_ {\text{src}}, \mathcal{D}_{\text{tar}}$), which is standard in offline RL generalization theory.
 
 - **Fixing Typos**: The definition of DDS was mistakenly referred to as Eq. (10); it should be **Eq. (13)**. We appreciate the reviewer’s attention to this detail and will fix this in the final version.
 
 - **Connecting DDS to Algorithm**:
   - **In practice**, DDS is used to construct the trajectory-level condition vector $c(\tau)$, which guides trajectory generation.
-  - **In theory**, the expected domain discrepancy $\mathbb{E}_{\mathcal{D}_{\text{src}}}[1 - \Delta_{\text{DDS}}]$ appears in the generalization bound:
+  - **In theory**, the expected domain discrepancy $\mathbb{E}_ {\mathcal{D}_{\text{src}}}[1 - \Delta_ {\text{DDS}}]$ appears in the generalization bound:
     $$
-    R_{\text{tar}} - R_{\text{src}} \leq 2B \sqrt{\frac{\log(2/\delta)}{n}} + \lambda \mathbb{E}_{\mathcal{D}_{\text{src}}}[1 - \Delta_{\text{DDS}}],
+    R_ {\text{tar}} - R_ {\text{src}} \leq 2B \sqrt{\frac{\log(2/\delta)}{n}} + \lambda \mathbb{E}_ {\mathcal{D}_ {\text{src}}}[1 - \Delta_ {\text{DDS}}],
     $$
     which quantifies how well the generated trajectories align with the target domain’s dynamics.
 
