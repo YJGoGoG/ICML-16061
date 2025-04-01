@@ -272,7 +272,9 @@ We agree that the original statement was incomplete. We now clarify:
 
 - **Connecting DDS to Algorithm**:
   - **In practice**, DDS is used to construct the trajectory-level condition vector $c(\tau)$, which guides trajectory generation.
-  - **In theory**, the expected domain discrepancy $\mathbb{E}_ {\mathcal{D}_{\text{src}}}[1 - \Delta_ {\text{DDS}}]$ appears in the generalization bound:
+  - **In theory**, the expected domain discrepancy $\mathbb{E}_ {\mathcal{D}_ 
+   {\text{src}}}[1 - \Delta_ {\text{DDS}}]$ appears in the generalization bound:
+  
     $$R_ {\text{tar}} - R_ {\text{src}} \leq 2B \sqrt{\frac{\log(2/\delta)}{n}} + \lambda \mathbb{E}_ {\mathcal{D}_ {\text{src}}}[1 - \Delta_ {\text{DDS}}],$$
     which quantifies how well the generated trajectories align with the target domain’s dynamics.
 
