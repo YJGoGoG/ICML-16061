@@ -70,7 +70,7 @@ We address this by comparing our method’s efficiency to baselines and explorin
 
 - The **original DiffTA** introduces extra cost due to auxiliary model pretraining and conditional diffusion training. Empirically, its overall training time is about **5.1×** that of IGDF.
 
-- To improve efficiency, we adopt the **EDP**, replacing the original sampling process. EDP reduces the **trajectory generation cost by ~21×**, bringing total training time down to **2.4×** while maintaining competitive performance.
+- To improve efficiency, we adopt the **EDP**, replacing the original sampling process. EDP reduces the **trajectory generation cost by ~21×**, bringing total training time down to **~2.4×** while maintaining competitive performance.
 
 Below is a summary:
 
