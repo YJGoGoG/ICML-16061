@@ -257,7 +257,7 @@ We fully agree that the assumptions may not globally hold in deep conditional di
 
 ### 📌 2. Clarification on Theorem 2: Definitions and Algorithm Connection
 
-**Concern**: Several terms (e.g., $R_{\text{tar}}$, $R_{\text{src}}$, $\hat{R}_{\text{tar}}$) are undefined, and the relationship between DDS and the algorithm is unclear.
+**Concern**: Several terms \(e.g., $R_{\text{tar}}$, $R_{\text{src}}$, $\hat{R}_{\text{tar}}$, $ \mathcal {H} $ \) are undefined, and the relationship between DDS and the algorithm is unclear.
 
 We agree that the original statement was incomplete. We now clarify:
 
@@ -266,7 +266,7 @@ We agree that the original statement was incomplete. We now clarify:
   - $R_ {\text{tar}}, R_ {\text{src}}$: Expected returns of the **same policy $\pi$**, trained using DiffTA-generated data, but evaluated under the **target** and **source** domain dynamics.
   - $\hat{R}_ {\text{tar}}$: Empirical estimate of $R_ {\text{tar}}$ from sampled target domain data.
 
-- **Sampling Assumption**: We assume transitions are sampled i.i.d. from the source and target offline datasets ($\mathcal{D_ {\text{src}}}$, $\mathcal{D_ {\text{tar}}}$), which is standard in offline RL generalization theory.
+- **Sampling Assumption**: We assume transitions are sampled i.i.d. from the source and target offline datasets \($\mathcal{D_ {\text{src}}}$, $\mathcal{D_ {\text{tar}}}$\), which is standard in offline RL generalization theory.
 
 - **Fixing Typos**: The definition of DDS was mistakenly referred to as Eq. (10); it should be **Eq. (13)**. We appreciate the reviewer’s attention to this detail and will fix this in the final version.
 
