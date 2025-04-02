@@ -163,7 +163,7 @@ We conduct preliminary comparisons on both locomotion and Adroit domains using e
 
 <div align="center">
     <img src="ant-friction-medium-PAR.jpeg" width="40%" height ="100%" > 
-    <img src="door-shink-par.jpeg" width="40%" height ="100%" > 
+    <img src="door-shink-PAR.jpeg" width="40%" height ="100%" > 
 </div>
 <p align = 'center'>
 Figure 2. Comparative mean performance analysis of BC_VGDF, BC_PAR and DiffTA
