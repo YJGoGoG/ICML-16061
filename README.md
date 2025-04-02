@@ -257,7 +257,7 @@ We fully agree that the assumptions may not globally hold in deep conditional di
 
 ### 📌 2. Clarification on Theorem 2: Definitions and Algorithm Connection
 
-**Concern**: Several terms (e.g., $R_ {\text{tar}}, R_ {\text{src}}, \hat{R}_ {\text{tar}}, \mathcal{H}$) are undefined, and the relationship between DDS and the algorithm is unclear.
+**Concern**: Several terms (e.g., $R_{\text{tar}}, R_{\text{src}}, \hat{R}_{\text{tar}}, \mathcal{H}$) are undefined, and the relationship between DDS and the algorithm is unclear.
 
 We agree that the original statement was incomplete. We now clarify:
 
@@ -273,7 +273,7 @@ We agree that the original statement was incomplete. We now clarify:
 - **Connecting DDS to Algorithm**:
   - **In practice**, DDS is used to construct the trajectory-level condition vector $c(\tau)$, which guides trajectory generation.
   - **In theory**, the expected domain discrepancy
-    $\mathbb{E}_ {\mathcal{D}_ {\text{src}}}[1 - \Delta_ {\text{DDS}}]$ appears in the generalization bound: \
+    $\mathbb{E}_ {\mathcal{D}_ {\text{src}}}[1 - \Delta_ {\text{DDS}}]$ appears in the generalization bound: 
     
     $R_ {\text{tar}} - R_ {\text{src}} \leq 2B \sqrt{\frac{\log(2/\delta)}{n}} + \lambda \mathbb{E}_ {\mathcal{D}_ {\text{src}}}[1 - \Delta_ {\text{DDS}}],$
 
