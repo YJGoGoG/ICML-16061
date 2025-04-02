@@ -266,7 +266,7 @@ We agree that the original statement was incomplete. We now clarify:
   - $R_ {\text{tar}}, R_ {\text{src}}$: Expected returns of the **same policy $\pi$**, trained using DiffTA-generated data, but evaluated under the **target** and **source** domain dynamics.
   - $\hat{R}_ {\text{tar}}$: Empirical estimate of $R_ {\text{tar}}$ from sampled target domain data.
 
-- **Sampling Assumption**: We assume transitions are sampled i.i.d. from the source and target offline datasets \($\mathcal{D_ {\text{src}}}$, $\mathcal{D_ {\text{tar}}}$\), which is standard in offline RL generalization theory.
+- **Sampling Assumption**: We assume transitions are sampled i.i.d. from the source and target offline datasets \($\mathcal{D_ {\text{src}}}$, $\mathcal{D_ {\text{tar}}}$ \), which is standard in offline RL generalization theory.
 
 - **Fixing Typos**: The definition of DDS was mistakenly referred to as Eq. (10); it should be **Eq. (13)**. We appreciate the reviewer’s attention to this detail and will fix this in the final version.
 
