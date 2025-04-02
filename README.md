@@ -203,7 +203,7 @@ We conduct an ablation study on the **Reward Context**, a key component in DiffT
     <img src="abl-gravity.jpeg" width="40%" height ="100%" >
 </div>
 <p align = 'center'>
-Figure 2. Average returns (bars) and standard deviations (error
+Figure 4. Average returns (bars) and standard deviations (error
 bars) for DiffTA and its ablated variants (removing one component
 at a time) 
 </p>
