@@ -44,6 +44,23 @@ Their role is to **encode prior knowledge** into the trajectory conditioning vec
 
 ---------
 
+## 🔄 Response to Concern on Reward Function Assumption
+
+**We thank the reviewer for this insightful observation.**
+
+We agree that while the paper assumes the reward functions in the source and target domains are the same, this assumption is **not directly used in the diffusion model’s loss function**.
+
+To clarify:
+
+- The reward function is **not used for gradient computation** or model optimization;
+- Instead, the reward only serves as **a component of the trajectory context**, encouraging the diffusion model to generate high-return trajectories;
+- Therefore, **DiffTA does not rely on the structural form of the reward function**, and this assumption can be relaxed in practice;
+- What’s needed is simply that the **target-domain reward is known and evaluable**, rather than being strictly identical to the source-domain reward.
+
+We will clarify this in the final version, emphasizing that **reward matching is not essential for DiffTA to function**, and that our method is compatible with moderate reward shifts as long as target-domain returns can be computed.
+
+---
+
 
 ## 📊 Experimental Addendum: Enhanced Reporting, Baselines, and Ablation Studies
 
