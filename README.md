@@ -1,9 +1,9 @@
 <h1 align = "center">Trajectory Alignment via Diffusion Models in Cross-Domain
 Reinforcement Learning</h1>
 
+<!--
+## 🧠 Motivation and Key Contribution: A Generative Paradigm for Cross-Domain RL 
 
-
-## 🧠 Motivation and Key Contribution: A Generative Paradigm for Cross-Domain RL
 
 Existing cross-domain offline RL methods typically focus on reweighting, relabeling, or filtering source-domain data to mitigate distribution shift. However, these approaches fundamentally rely on the quality and coverage of pre-existing data and struggle when the target domain exhibits sparse or divergent dynamics.
 
@@ -37,12 +37,16 @@ Though DiffTA involves several pre-trained models — such as:
 
 Their role is to **encode prior knowledge** into the trajectory conditioning vector. This allows DiffTA to **fuse disparate learning signals into a unified data synthesis framework**, rather than simply aggregating multiple models.
 
-### Summary
+### Summary 
+
+-->
 
 > **DiffTA is not an ensemble of partial solutions.**  
 > It is a **generative mechanism** that transforms pre-trained knowledge into **target-consistent trajectories**, advancing the frontier from data reuse to **data creation** in cross-domain RL.
 
 ---------
+
+<!--
 
 ## 🔄 Response to Concern on Reward Function Assumption
 
@@ -61,8 +65,11 @@ We will clarify this in the final version, emphasizing that **reward matching is
 
 ---
 
+-->
 
 ## 📊 Experimental Addendum: Enhanced Reporting, Baselines, and Ablation Studies
+
+<!--
 
 Several reviewers raised valid concerns regarding experimental completeness and clarity, including:
 
@@ -72,15 +79,20 @@ Several reviewers raised valid concerns regarding experimental completeness and 
 - Lack of comparisons with recent strong baselines (e.g., PAR, Decision Diffuser);
 - Limited ablation studies on key components.
 
-In response, we provide expanded experimental results covering standard deviations, error bar visualizations, extended baseline 
+In response, 
+
+
+We provide expanded experimental results covering standard deviations, error bar visualizations, extended baseline 
 comparisons (including PAR and Decision Diffuser), enriched ablations, 
 and training cost analysis with **Efficient Diffusion Policy (EDP)** [Kang et al., 2023, NeurIPS]
  integration.
 
 ---
+-->
 
 ### 📌 1. Training Efficiency and Cost Analysis
 
+<!--
 In addition to performance metrics, several reviewers raised concerns about the **training cost** of DiffTA.
 
 We address this by comparing our method’s efficiency to baselines and exploring a more efficient variant:
@@ -91,8 +103,10 @@ We address this by comparing our method’s efficiency to baselines and explorin
 
 Below is a summary:
 
+-->
+
 <p align="center">
-  Table 1. Training cost and performance comparison with EDP acceleration
+  Table 1. Training cost and performance comparison with EDP acceleration. All generation is conducted offline, and policy learning cost remains comparable to prior methods.
 </p>
 
 <div align="center">
@@ -105,18 +119,21 @@ Below is a summary:
 
 </div>
 
+<!--
 All generation is conducted **offline**, and policy learning cost remains comparable to prior methods.
 **Additional experiments and analysis will be included in the appendix of the final version.**
-
+-->
 
 ---
 
 ###  📌 2. Full Version of Main Tables (with Standard Deviations) and Error Bar Plots for Key Tasks
 
+<!--
 We now report **mean ± standard deviation across 5 seeds** for all baseline methods in Table 1 of main text. 
+-->
 
 <p align="center">
-  Table 2. Performance comparison across different baselines under friction-0.5 and gravity-0.5 shifts. The best results are highlighted
+  Table 2. Performance comparison across different baselines under friction-0.5 and gravity-0.5 shifts. The best results are highlighted.
 </p>
 
 <div align="center">
@@ -142,18 +159,20 @@ We now report **mean ± standard deviation across 5 seeds** for all baseline met
 | gravity-0.5 | **Average**            | 51.6     | 59.8     | 59.2      | 60.1     | 65.7     | 67.3     | 68.3     | **77.2**       |
 </div>
 
-
+<!--
 > Note that the error bar plots and the mean ± standard deviation values in the table 
 > convey similar information. For instance, in Table 2 of main text, we use error bar plots for a more 
 > intuitive visualization of the results. 
 > **A more comprehensive set of error bar charts will be included in the appendix of the final version.**
+-->
 
 ---
 
 ###  📌 3. Error Bar Plots for Key Tasks
-
+<!--
 Below, we present the error bar plots for some of the results in Table 2. 
 Each figure clearly shows mean and standard deviation for all methods, highlighting performance robustness and significance.
+-->
 
 <div align="center">
     <img src="Table2-friction-gravity.jpeg" width="48%" height ="100%" >  <br> 
@@ -161,13 +180,14 @@ Each figure clearly shows mean and standard deviation for all methods, highlight
     <img src="Table2-morph.jpeg" width="48%" height ="100%" >
 </div>
 <p align = 'center'>
-Figure 1. Average returns (bars) and standard deviations (error bars) of differnet methods under diverse domain shift tasks 
+Figure 1. Average returns (bars) and standard deviations (error bars) of differnet methods under diverse domain shift tasks.
 </p>
 
 
 
 ### 📌 4. Extended Baseline Comparisons: PAR, Decision Diffuser, OTDF
 
+<!--
 We extend our baseline comparisons to include recent strong methods, including:
 
 - **PAR** [Lyu et al., 2024, ICLR]
@@ -176,14 +196,14 @@ We extend our baseline comparisons to include recent strong methods, including:
 We conduct preliminary comparisons on both locomotion and Adroit domains using environments from ODRL. The evaluations are conducted under the **Offline-Online** setting: source data is offline (D4RL), while target environments are accessible for interaction. Following ODRL and the original papers, PAR augments data via optimal transport and imitation, and DD uses augmented target transitions for return-conditioned generation.
 
 ####  Performance Comparison (Offline-Online Setting)
-
+-->
 
 <div align="center">
     <img src="ant-friction-medium-PAR.jpeg" width="40%" height ="100%" > 
     <img src="door-shink-PAR.jpeg" width="40%" height ="100%" > 
 </div>
 <p align = 'center'>
-Figure 2. Comparative mean performance analysis of BC_VGDF, BC_PAR and DiffTA
+Figure 2. Comparative mean performance analysis of BC_VGDF, BC_PAR and DiffTA. The evaluations are conducted under the Offline-Online setting: source data is offline (D4RL), while target environments are accessible for interaction.
 </p>
 
 <div align="center">
@@ -191,11 +211,11 @@ Figure 2. Comparative mean performance analysis of BC_VGDF, BC_PAR and DiffTA
     <img src="tnse-hopper-friction.jpeg" width="40%" height ="100%" > 
 </div>
 <p align = 'center'>
-Figure 3. t-SNE visualization of generated trajectories and target
-domain trajectories
+Figure 3. t-SNE visualization of generated trajectories and target.
+domain trajectories.
 </p>
 
-
+<!--
 These results indicate that:
 - On **Adroit**, most methods struggle due to challenging morphology and high-dimensional control—**this aligns with observations from the ODRL benchmark**.
 - While PAR outperforms VGDF in some locomotion settings, our **DiffTA achieves the strongest overall results**, confirming its effectiveness in aligning dynamics and generating reliable high-return data across domains.
@@ -205,13 +225,15 @@ These results indicate that:
 
 We will include full PAR and DD results across all tasks in the final version, and additionally incorporate the latest **OTDF** [ICLR 2025] for comparison and discussion.
 
-
+-->
 ---
 
 ### 📌 5. Enriched Ablation Studies
 
-We conduct an ablation study on the **Reward Context**, a key component in DiffTA’s trajectory conditioning mechanism.
+<!--
 
+We conduct an ablation study on the **Reward Context**, a key component in DiffTA’s trajectory conditioning mechanism.
+-->
 
 
 
@@ -222,9 +244,10 @@ We conduct an ablation study on the **Reward Context**, a key component in DiffT
 <p align = 'center'>
 Figure 4. Average returns (bars) and standard deviations (error
 bars) for DiffTA and its ablated variants (removing one component
-at a time) 
+at a time) .
 </p>
 
+<!--
 The ablation study showed a **5.4–18.1 point** performance drop when the **Reward Context** was removed, raising the question of whether the **Reward Context** is more important than the other components in DiffTA. Here's the analysis:
 
 #### （1） **Role of Reward Context**:
@@ -238,6 +261,7 @@ The ablation study showed a **5.4–18.1 point** performance drop when the **Rew
 
 #### (4) **Interaction with Policy Harmonization**:
    - Policy Harmonization ensures that the generated actions are feasible, but it does not directly impact the reward structure. Reward Context is necessary to ensure that the actions generated are also rewarding, which is crucial for improving task performance.
+
 
 ### Conclusion: Reward Context vs Other Components
 While Reward Context plays a crucial role in aligning the generated trajectories with the task’s objectives, it is most effective when combined with Value Guidance, Domain Discrepancy Score, and olicy Harmonization. The **5.4–18.1 point** drop in performance highlights its importance, but also underscores that no single component is sufficient on its own. 
